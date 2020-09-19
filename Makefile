@@ -11,7 +11,7 @@ HEADERS = $(patsubst %, $(HEADERDIR)/%, $(_HEADERS))
 _OBJS = main.o dummy.o
 OBJS = $(patsubst %, $(OBJDIR)/%, $(_OBJS))
 
-$(PROG) : pre-build $(OBJS)
+$(PROG) : clean pre-build $(OBJS)
 	$(CC) -o build/$(PROG) $(OBJS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADERS)
